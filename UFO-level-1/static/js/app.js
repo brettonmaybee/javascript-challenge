@@ -1,22 +1,16 @@
 // from data.js
 var tableData = data;
 
-// YOUR CODE HERE!
 var tbody =d3.select("tbody");
 
 console.log(tableData);
 
-tableData.forEach(function(ufoReport){
-    console.log(ufoReport)
+tableData.forEach((ufoReport)=>{
+  console.log(ufoReport)
+  var row =tbody.append("tr");
+  Object.entries(ufoReport).forEach(([key,value])=>{
+    console.log(key,value);
+    var cell= row.append("td");
+    cell.text(value);
+  });
 });
-
-tableData.forEach(function(ufoReport){
-   var row =tbody.append("tr");
-});
-
-//tableData.forEach(function(ufoReport){
-  //  var row =tbody.forEach("tr");
-    //Object.defineProperties(ufoReport).forEach(function([key,value]){
-    //    console.log(key,value);
-    //})
-//})
