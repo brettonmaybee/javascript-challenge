@@ -10,6 +10,24 @@ var button = d3.select("#filter-btn");
 var date = d3.select("#datetime").property("value");
 
 
+// inputField.on("change", function() {
+//   var filterDate = d3.event.target.value;
+//    //button.on("click", function() {  
+//    //});
+//   console.log(filterDate);
+// });
+
+//console.log(searchDate);
+// Create event handlers 
+
+// inputField.on("submit",runEnter);
+
+// // Complete the event handler function for the form
+
+// Prevent the page from refreshing
+//functiond3.event.preventDefault();
+
+
 function runEnter() {
 
    // Prevent the page from refreshing
@@ -49,5 +67,18 @@ function buildTable(data) {
 d3.selectAll("#filter-btn").on("click", runEnter);
 
 buildTable(tableData);
+
+// var button = d3.select("#filter-btn");
+// var inputField = d3.select("#input-field");
+
+// inputField.on("change", function() {
+//   var newText = d3.event.target.value;
+//   console.log(newText);
+// });
+
+// button.on("click", function() {
+//   console.log(inputField);
+//   //console.log(d3.event.target);
+// })
 
 
