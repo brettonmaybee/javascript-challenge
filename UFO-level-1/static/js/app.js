@@ -1,30 +1,60 @@
 // from data.js
 var tableData = data;
+
 var tbody =d3.select("tbody");
-//console.log(tableData);
-var button = d3.select("#filter-btn");
-var inputField = d3.select("#datetime");
 
-var searchDate=
-inputField.on("change", function() {
-  var filterDate = d3.event.target.value;
-  //button.on("click", function() {  
-  //});
-  console.log(filterDate);
-});
+console.log(tableData);
 
+// var button = d3.select("#filter-btn");
+// var inputField = d3.select("#datetime");
 
+// inputField.on("change", function() {
+//   var filterDate = d3.event.target.value;
+//   //button.on("click", function() {  
+//   //});
+//   console.log(filterDate);
+// });
 
-tableData.forEach((ufoReport)=>{
+//console.log(searchDate);
+// // Create event handlers 
+// button.on("click", runEnter);
+// inputField.on("submit",runEnter);
+
+// // Complete the event handler function for the form
+// function runEnter() {
+
+//   // Prevent the page from refreshing
+//   d3.event.preventDefault();
+  
+//   // Select the input element and get the raw HTML node
+//   var inputElement = d3.select("#datetime");
+
+//   // Get the value property of the input element
+//   var inputValue = inputElement.property("value");
+
+//   //console.log(inputValue);
+//   //console.log(people);
+
+//   var filteredData = tableData.filter(tableData => tableData.datetime === inputValue);
+
+//   console.log(filteredData);
+// }
+
+function buildTable(data) {
+  data.forEach((ufoReport)=>{
   //console.log(ufoReport)
-  var row =tbody.append("tr");
-  Object.entries(ufoReport).forEach(([key,value])=>{
+    var row =tbody.append("tr");
+  
+    Object.values(ufoReport).forEach((value)=>{
     //console.log(key,value);
-    var cell= row.append("td");
-    cell.text(value);
+      var cell= row.append("td");
+        cell.text(value);
+      }
+    );
   });
-})
 
+}
+buildTable(tableData);
 // var button = d3.select("#filter-btn");
 // var inputField = d3.select("#input-field");
 
@@ -36,5 +66,6 @@ tableData.forEach((ufoReport)=>{
 // button.on("click", function() {
 //   console.log(inputField);
 //   //console.log(d3.event.target);
-// })});
+// })
+
 
